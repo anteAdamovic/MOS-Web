@@ -39,4 +39,9 @@ between users mobile device and the web service.
 
 -> <code> git checkout -b 'branchname' </code> (Create your own branch with 'branchname' from develop)
 
+-> <i> run to start ionic </i><code> ionic serve --lab </code>
+
+
+
+
 <b> ALL WORK IS TO BE DONE ON DEVELOP BRANCH NOT ON MASTER </b>
