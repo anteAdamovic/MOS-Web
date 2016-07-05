@@ -30,6 +30,10 @@
         <h1 class="title"> {{title}} - {{titleShort}} </h1>
       </ion-header-bar>
       <ion-content>
+        <input type="button" ng-click="change()" value="Change">
+        <p ng-repeat="ab in array" style="display: block">
+          {{ab}}
+        </p>
       </ion-content>
     </ion-pane>
   </body>
