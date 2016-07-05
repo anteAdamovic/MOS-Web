@@ -64,7 +64,32 @@ angular.module('mos')
       price: 39.5,
       available: true
     }]
+  },{
+    name: 'Category 4',
+    id: 4
+  },{
+    name: 'Category 5',
+    id: 5
+  },{
+    name: 'Category 6',
+    id: 6
+  },{
+    name: 'Category 7',
+    id: 7
+  },{
+    name: 'Category 8',
+    id: 8
   }];
+
+  // For use during development
+  $scope.getCategoryItems = function(categoryId){
+
+  }
+
+  // For use during development
+  $scope.getCategoryList = function(){
+
+  }
 
 })
 
@@ -72,29 +97,80 @@ angular.module('mos')
 
 })
 
-.controller('categories-ctrl', function($scope, $http){
-  $scope.categories = [{
-    name: 'Category 1',
-    id: 1
+.controller('complaints-ctrl', function($scope, $http){
+  $scope.complaints = [{
+    name: 'Long wait time',
+    id: 1101312
   },{
-    name: 'Category 2',
-    id: 2
-  },{
-    name: 'Category 3',
-    id: 3
-  }]
+    name: 'Bad service',
+    id: 1102321
+  }];
+
+  $scope.getComplaints = function(){
+    $http.get('php/getComplaints.php').then(function(response){
+      $scope.complaints = response.data.d;
+    });
+  }
+})
+
+.controller('complaint-ctrl', function($scope, $stateParams, $http){
+  $scope.complaintId = $stateParams.complaintId;
+  $scope.complaint;
+
+  $scope.getComplaint = function(complaintId){
+    $http.get('php/getComplaint.php', { params: { complaintId: complaintId } }).then(function(response){
+      $scope.complaint = response.data.d;
+    });
+  }
+})
+
+.controller('order-ctrl', function($scope, $http){
+  $scope.categories = [
+    { name: 'Coffeine', id: 1 },
+    { name: 'Beer', id: 2 },
+    { name: 'Water', id: 3 },
+    { name: 'Tea', id: 4 },
+    { name: 'Wine', id: 5 },
+    { name: 'Liqeour', id: 6 },
+    { name: 'Juice', id: 7 },
+    { name: 'Ice Cream', id: 8 }
+  ];
+
+  // Have to use full path during development
+  $scope.getCategories = function(){
+    $http.get('php/getCategories.php').then(function(response){
+      // Get categories from getCategories.php
+      $scope.categories = response.data.d;
+    });
+  }
 })
 
 .controller('category-ctrl', function($scope, $stateParams){
+  console.log("category-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
   $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.items = $scope.data[$scope.categoryId-1].items;
+
+  // Have to use full path during development
+  $scope.getItems = function(categoryId){
+    $http.get('php/getItems.php',{ params: { categoryId: categoryId } }).then(function(response){
+      // Get items from category with categoryId
+    });
+  }
 })
 
 .controller('item-ctrl', function($scope, $stateParams){
+  console.log("item-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
   $scope.itemId = $stateParams.itemId;
   $scope.item = $scope.data[$scope.categoryId].items[$scope.itemId];
+
+  // Have to use full path during development
+  $scope.getItemData = function(categoryId, itemId){
+    $http.get('php/getItemData',{ params: { categoryId: categoryId, itemId: itemId } }).then(function(response){
+      // Get item data for item with itemId from category with categoryId
+    });
+  }
 });

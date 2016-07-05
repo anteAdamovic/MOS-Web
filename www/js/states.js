@@ -9,12 +9,22 @@ angular.module('mos')
       templateUrl: 'webPages/homeMenu.html'
     })
 
-    .state('/categories', {
-      url: '/categories',
-      templateUrl: 'webPages/categories.html'
+    .state('/order', {
+      url: '/order',
+      templateUrl: 'webPages/order.html'
     })
 
-    .state('/categories/category=id', {
+    .state('/complaints',{
+      url: '/complaints',
+      templateUrl: 'webPages/complaints.html'
+    })
+
+    .state('/complaints/complaint=complaintId', {
+      url: '/complaints/complaint=:complaintId',
+      templateUrl: 'webPages/complaint.html'
+    })
+
+    .state('/categories/category=categoryId', {
       url: '/categories/category=:categoryId',
       templateUrl: 'webPages/category.html'
     })
