@@ -1,1 +1,29 @@
-/* Empty. Add your own CSS if you like */
+.list {
+  width: 100%;
+}
+
+.list-item {
+  width: 100%;
+  text-align: center;
+}
+
+.list-item-half {
+  width: 50%;
+  text-align: center;
+}
+
+.list-item-link {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}

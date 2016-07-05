@@ -4,6 +4,21 @@ angular.module('mos')
   $scope.title = 'Mobile Order System';
   $scope.titleShort = 'MOS';
 
+  $scope.currentPath = "Mobile Order System";
+  $scope.isHome = true;
+
+  $scope.setCurrentPath = function(newPath){
+    $scope.currentPath = newPath;
+    if(newPath == 'Home')
+      $scope.isHome = true;
+    else
+      $scope.isHome = false;
+  }
+
+  $scope.goBack = function(){
+    history.back();
+  }
+
   $scope.data = [{
     name: 'Category 1',
     id: 1,
@@ -94,10 +109,12 @@ angular.module('mos')
 })
 
 .controller('home-ctrl', function($scope){
-
+  $scope.setCurrentPath("Home");
 })
 
 .controller('complaints-ctrl', function($scope, $http){
+  $scope.setCurrentPath("Home->Complaints");
+
   $scope.complaints = [{
     name: 'Long wait time',
     id: 1101312
@@ -125,6 +142,8 @@ angular.module('mos')
 })
 
 .controller('order-ctrl', function($scope, $http){
+  $scope.setCurrentPath("Home->Order");
+
   $scope.categories = [
     { name: 'Coffeine', id: 1 },
     { name: 'Beer', id: 2 },
@@ -152,6 +171,8 @@ angular.module('mos')
   $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.items = $scope.data[$scope.categoryId-1].items;
 
+  $scope.setCurrentPath("Home->Order->" + $scope.categoryName);
+
   // Have to use full path during development
   $scope.getItems = function(categoryId){
     $http.get('php/getItems.php',{ params: { categoryId: categoryId } }).then(function(response){
@@ -167,10 +188,24 @@ angular.module('mos')
   $scope.itemId = $stateParams.itemId;
   $scope.item = $scope.data[$scope.categoryId].items[$scope.itemId];
 
+  $scope.category;
+  $scope.item;
+
+  $scope.setCurrentPath("Home->Order->" + $scope.categoryId + "->" + $scope.item.name);
+
+  // Have to use full path during deployment
+  $scope.getCategory = function(categoryId){
+    $http.get('php/getCategory', { params: { categoryId: categoryId } }).then(function(response){
+      // Get category with categoryId
+      $scope.category = response.data.d;
+    });
+  }
+
   // Have to use full path during development
   $scope.getItemData = function(categoryId, itemId){
     $http.get('php/getItemData',{ params: { categoryId: categoryId, itemId: itemId } }).then(function(response){
       // Get item data for item with itemId from category with categoryId
+      $scope.item = response.data.d;
     });
   }
 });

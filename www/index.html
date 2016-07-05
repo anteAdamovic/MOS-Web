@@ -112,7 +112,8 @@
     <ion-pane>
 
       <ion-header-bar class="bar-stable">
-        <h1 class="title"> {{title}} - {{titleShort}} </h1>
+        <button class="float-left" value="Back" ng-click="goBack()" ng-hide="isHome"><b> Back </b></button>
+        <h2 class="title"> {{ currentPath }} </h2>
       </ion-header-bar>
 
       <ion-content>
