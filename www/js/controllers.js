@@ -81,6 +81,16 @@ angular.module('mos')
     id: 8
   }];
 
+  // For use during development
+  $scope.getCategoryItems = function(categoryId){
+
+  }
+
+  // For use during development
+  $scope.getCategoryList = function(){
+
+  }
+
 })
 
 .controller('home-ctrl', function($scope){
@@ -89,14 +99,14 @@ angular.module('mos')
 
 .controller('order-ctrl', function($scope, $http){
   $scope.categories = [
-    { name: 'Category 1', id: 1 },
-    { name: 'Category 2', id: 2 },
-    { name: 'Category 3', id: 3 },
-    { name: 'Category 4', id: 4 },
-    { name: 'Category 5', id: 5 },
-    { name: 'Category 6', id: 6 },
-    { name: 'Category 7', id: 7 },
-    { name: 'Category 8', id: 8 }
+    { name: 'Coffeine', id: 1 },
+    { name: 'Beer', id: 2 },
+    { name: 'Water', id: 3 },
+    { name: 'Tea', id: 4 },
+    { name: 'Wine', id: 5 },
+    { name: 'Liqeour', id: 6 },
+    { name: 'Juice', id: 7 },
+    { name: 'Ice Cream', id: 8 }
   ];
 
   // Have to use full path during development
