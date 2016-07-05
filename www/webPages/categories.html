@@ -1,7 +1,12 @@
 <div ng-controller="categories-ctrl">
   <p> This is categories.html </p>
 
-  <div ng-repeat="category in categories">
-    <a href="#/categories/category={{category.id}}"> {{category.name}} </a>
-  </div>
+  <ion-list class="category-list">
+    <ion-item>
+      <h3> Category List </h3>
+    </ion-item>
+    <ion-item ng-repeat="category in categories">
+      <a href="#/categories/category={{category.id}}"> {{category.name}} </a>
+    </ion-item>
+  </ion-list>
 </div>

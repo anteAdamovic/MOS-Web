@@ -86,6 +86,15 @@ angular.module('mos')
 })
 
 .controller('category-ctrl', function($scope, $stateParams){
-  $scope.id = $stateParams.id;
-  $scope.items = $scope.data[$scope.id-1].items;
+  console.log($stateParams);
+  $scope.categoryId = $stateParams.categoryId;
+  $scope.categoryName = $scope.data[$scope.categoryId-1].name;
+  $scope.items = $scope.data[$scope.categoryId-1].items;
+})
+
+.controller('item-ctrl', function($scope, $stateParams){
+  console.log($stateParams);
+  $scope.categoryId = $stateParams.categoryId;
+  $scope.itemId = $stateParams.itemId;
+  $scope.item = $scope.data[$scope.categoryId].items[$scope.itemId];
 });

@@ -9,14 +9,19 @@ angular.module('mos')
       templateUrl: 'webPages/homeMenu.html'
     })
 
-    .state('/home/categories', {
+    .state('/categories', {
       url: '/categories',
       templateUrl: 'webPages/categories.html'
     })
 
-    .state('/home/categories/categoryItems', {
-      url: '/categories/category=:id',
+    .state('/categories/category=id', {
+      url: '/categories/category=:categoryId',
       templateUrl: 'webPages/category.html'
+    })
+
+    .state('/item', {
+      url: '/categories/category=:categoryId/item=:itemId',
+      templateUrl: 'webPages/item.html'
     });
 
   $urlRouterProvider.otherwise('/home');
