@@ -16,3 +16,4 @@ between users mobile device and the web service.
 <b>Set up working enviroment:</b>
 - -> Coming soon
 
+<b> ALL WORK IS TO BE DONE ON DEVELOP BRANCH NOT ON MASTER </b>
