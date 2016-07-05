@@ -97,19 +97,43 @@ angular.module('mos')
     { name: 'Category 6', id: 6 },
     { name: 'Category 7', id: 7 },
     { name: 'Category 8', id: 8 }
-  ]
+  ];
+
+  // Have to use full path during development
+  $scope.getCategories = function(){
+    $http.get('php/getCategories.php').then(function(response){
+      // Get categories from getCategories.php
+      $scope.categories = response.data.d;
+    });
+  }
 })
 
 .controller('category-ctrl', function($scope, $stateParams){
+  console.log("category-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
   $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.items = $scope.data[$scope.categoryId-1].items;
+
+  // Have to use full path during development
+  $scope.getItems = function(categoryId){
+    $http.get('php/getItems.php',{ params: { categoryId: categoryId } }).then(function(response){
+      // Get items from category with categoryId
+    });
+  }
 })
 
 .controller('item-ctrl', function($scope, $stateParams){
+  console.log("item-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
   $scope.itemId = $stateParams.itemId;
   $scope.item = $scope.data[$scope.categoryId].items[$scope.itemId];
+
+  // Have to use full path during development
+  $scope.getItemData = function(categoryId, itemId){
+    $http.get('php/getItemData',{ params: { categoryId: categoryId, itemId: itemId } }).then(function(response){
+      // Get item data for item with itemId from category with categoryId
+    });
+  }
 });
