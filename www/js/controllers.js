@@ -97,6 +97,33 @@ angular.module('mos')
 
 })
 
+.controller('complaints-ctrl', function($scope, $http){
+  $scope.complaints = [{
+    name: 'Long wait time',
+    id: 1101312
+  },{
+    name: 'Bad service',
+    id: 1102321
+  }];
+
+  $scope.getComplaints = function(){
+    $http.get('php/getComplaints.php').then(function(response){
+      $scope.complaints = response.data.d;
+    });
+  }
+})
+
+.controller('complaint-ctrl', function($scope, $stateParams, $http){
+  $scope.complaintId = $stateParams.complaintId;
+  $scope.complaint;
+
+  $scope.getComplaint = function(complaintId){
+    $http.get('php/getComplaint.php', { params: { complaintId: complaintId } }).then(function(response){
+      $scope.complaint = response.data.d;
+    });
+  }
+})
+
 .controller('order-ctrl', function($scope, $http){
   $scope.categories = [
     { name: 'Coffeine', id: 1 },

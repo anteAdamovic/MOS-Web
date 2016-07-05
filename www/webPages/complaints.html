@@ -1,0 +1,7 @@
+<div ng-controller="complaints-ctrl">
+  <ion-list>
+    <ion-item ng-repeat="complaint in complaints">
+      <a href="#complaints/complaint={{complaint.id}}"> {{complaint.name}} </a>
+    </ion-item>
+  </ion-list>
+</div>
