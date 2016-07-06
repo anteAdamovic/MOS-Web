@@ -7,6 +7,7 @@
   width: 100%;
   min-width: 170px;
   text-align: center;
+  padding: 10px !important;
 }
 
 .list-item-half {
@@ -14,6 +15,7 @@
   width: 50%;
   min-width: 170px;
   text-align: center;
+  padding: 10px !important;
 }
 
 .list-item-link {
@@ -40,9 +42,11 @@
 }
 
 .item-link {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin-top: -5px;
   height: 30px;
+  display: block;
 }
 
 .float-left {
@@ -55,9 +59,10 @@
 
 .button-back {
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid;
+  border-color: #666;
   text-decoration: none;
-  color: black;
+  color: #666;
   font-size: 18px !important;
-  margin-top: 3px;
+  margin-top: 0px;
 }
