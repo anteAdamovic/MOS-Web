@@ -1,0 +1,15 @@
+<div ng-controller="categories-ctrl">
+  <p> This is categories.html </p>
+
+  <ion-list class="category-list">
+    <ion-item>
+      <h3> Category List </h3>
+    </ion-item>
+    <ion-item ng-repeat="category in categories" class="list-item-half">
+      <a class="category" href="#/categories/category={{category.id}}">
+        <img class="float-left category-icon" src="img/ionic.png"></img>
+        <p class="category-name">{{category.name}}</p>
+      </a>
+    </ion-item>
+  </ion-list>
+</div>

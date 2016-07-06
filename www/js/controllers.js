@@ -113,7 +113,7 @@ angular.module('mos')
 })
 
 .controller('complaints-ctrl', function($scope, $http){
-  $scope.setCurrentPath("Home->Complaints");
+  $scope.setCurrentPath("Complaints");
 
   $scope.complaints = [{
     name: 'Long wait time',
@@ -134,6 +134,8 @@ angular.module('mos')
   $scope.complaintId = $stateParams.complaintId;
   $scope.complaint;
 
+  $scope.setCurrentPath('Complaint No.' + $scope.complaintId);
+
   $scope.getComplaint = function(complaintId){
     $http.get('php/getComplaint.php', { params: { complaintId: complaintId } }).then(function(response){
       $scope.complaint = response.data.d;
@@ -141,8 +143,8 @@ angular.module('mos')
   }
 })
 
-.controller('order-ctrl', function($scope, $http){
-  $scope.setCurrentPath("Home->Order");
+.controller('categories-ctrl', function($scope, $http){
+  $scope.setCurrentPath("Categories");
 
   $scope.categories = [
     { name: 'Coffeine', id: 1 },
@@ -171,7 +173,7 @@ angular.module('mos')
   $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.items = $scope.data[$scope.categoryId-1].items;
 
-  $scope.setCurrentPath("Home->Order->" + $scope.categoryName);
+  $scope.setCurrentPath($scope.categoryName);
 
   // Have to use full path during development
   $scope.getItems = function(categoryId){
@@ -185,13 +187,14 @@ angular.module('mos')
   console.log("item-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
+  $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.itemId = $stateParams.itemId;
   $scope.item = $scope.data[$scope.categoryId].items[$scope.itemId];
 
   $scope.category;
   $scope.item;
 
-  $scope.setCurrentPath("Home->Order->" + $scope.categoryId + "->" + $scope.item.name);
+  $scope.setCurrentPath($scope.categoryName + " -> " + $scope.item.name);
 
   // Have to use full path during deployment
   $scope.getCategory = function(categoryId){
