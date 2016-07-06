@@ -3,11 +3,13 @@
 }
 
 .list-item {
+  display: block;
   width: 100%;
   text-align: center;
 }
 
 .list-item-half {
+  display: inline-table;
   width: 50%;
   text-align: center;
 }
@@ -18,6 +20,13 @@
   margin: 0;
   padding: 10px;
   text-decoration: none;
+}
+
+.category-icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .float-left {

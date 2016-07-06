@@ -5,8 +5,8 @@
     <ion-item>
       <h3> Category List </h3>
     </ion-item>
-    <ion-item ng-repeat="category in categories" class="category-item">
-      <img src="img/ionic.png" width="30px" height="30px"></img>
+    <ion-item ng-repeat="category in categories" class="list-item-half">
+      <img class="float-left category-icon" src="img/ionic.png"></img>
       <a href="#/categories/category={{category.id}}"> {{category.name}} </a>
     </ion-item>
   </ion-list>
