@@ -3,11 +3,6 @@
 
 <div ng-controller="home-ctrl">
   <ion-list class="home-list">
-    <ion-item class="home-list-item">
-      <a class="home-list-link" href="#/categories"> Order </a>
-    </ion-item>
-    <ion-item class="home-list-item">
-      <a class="home-list-link" href="#/complaints"> Complaints </a>
-    </ion-item>
+    <home-item ng-repeat="homeItem in homeItems" url='{{homeItem.url}}' name='{{homeItem.name}}'></home-item>
   </ion-list>
 </div>
