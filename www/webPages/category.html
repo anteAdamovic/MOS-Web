@@ -1,5 +1,9 @@
 <div ng-controller="category-ctrl">
   <ion-list class="item-list">
+    <ion-item class="list-item">
+      <img class="float-left category-icon" src="img/ionic.png"></img>
+      <quote class="category-quote">{{category.quote}}</quote>
+    </ion-item>
     <ion-item class="list-item" ng-repeat="item in items" style="clear: both">
       <a href="#/categories/category={{categoryId}}/item={{item.id}}" class="item-link">
         <p class="float-left"> {{item.name}} </p>

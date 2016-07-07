@@ -28,63 +28,15 @@
     <script src="cordova.js"></script>
 
     <!-- Underscore.js -->
-    <script src="js/underscore.js"></script>
+    <script src="jsLibraries/underscore.js"></script>
 
     <!-- app's js -->
     <script src="js/app.js"></script>
+    <script src="views/home/home-ctrl.js"></script>
+
     <script src="js/controllers.js"></script>
     <script src="js/states.js"></script>
 
-    <style>
-      .category-list{
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .home-list{
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .item-list {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .category-list ion-item {
-        padding: 5px;
-      }
-
-      .category-item {
-        width: 50%;
-        display: inline-flex;
-        text-align: center;
-        margin: 0 auto;
-      }
-
-      .category-item a {
-        display: block;
-        text-align: center;
-        padding-left: 100px;
-      }
-
-      .home-list a {
-        display: block;
-        padding: 7px;
-        text-decoration: none;
-      }
-      
-      .float-right {
-        float: right;
-      }
-
-      .float-left {
-        float: left;
-      }
-    </style>
 
   </head>
   <body ng-app="mos" ng-controller="mos-ctrl">

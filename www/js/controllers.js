@@ -20,38 +20,38 @@ angular.module('mos')
   }
 
   $scope.data = [
-    { name: 'Hot Drinks', id: 1, image: 'image.img', items: [
-                                                        { name: 'Hot Drinks 1', id: 1, price: 11.1, available: true },
-                                                        { name: 'Hot Drinks 2', id: 2, price: 22.2, available: true },
-                                                        { name: 'Hot Drinks 3', id: 3, price: 33.3,  available: true }]
-  },{ name: 'Iced Drinks', id: 2, image: 'image.img', items: [
-                                                        { name: 'Iced Drinks 1', id: 1, price: 11.1, available: true },
-                                                        { name: 'Iced Drinks 2', id: 2, price: 22.2, available: true },
-                                                        { name: 'Iced Drinks 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Water', id: 3, image: 'image.img', items: [
-                                                  { name: 'Water 1', id: 1, price: 11.1, available: true },
-                                                  { name: 'Water 2', id: 2, price: 22.2, available: true },
-                                                  { name: 'Water 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Draught Beer', id: 4, image: 'image.img', items: [
-                                                 { name: 'Draught Beer 1', id: 1, price: 11.1, available: true },
-                                                 { name: 'Draught Beer 2', id: 2, price: 22.2, available: true },
-                                                 { name: 'Draught Beer 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Bottled Beer', id: 5, image: 'image.img', items: [
-                                                 { name: 'Bottled Beer 1', id: 1, price: 11.1, available: true },
-                                                 { name: 'Bottled Beer 2', id: 2, price: 22.2, available: true },
-                                                 { name: 'Bottled Beer 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Wine', id: 6, image: 'image.img', items: [
-                                                 { name: 'Wine 1', id: 1, price: 11.1, available: true },
-                                                 { name: 'Wine 2', id: 2, price: 22.2, available: true },
-                                                 { name: 'Wine 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Brandy', id: 7, image: 'image.img', items: [
-                                                   { name: 'Brandy 1', id: 1, price: 11.1, available: true },
-                                                   { name: 'Brandy 2', id: 2, price: 22.2, available: true },
-                                                   { name: 'Brandy 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Liqueur', id: 8, image: 'image.img', items: [
-                                                    { name: 'Liqueur 1', id: 1, price: 11.1, available: true },
-                                                    { name: 'Liqueur 2', id: 2, price: 22.2, available: true },
-                                                    { name: 'Liqueur 3', id: 3, price: 33.3, available: true }]
+    { name: 'Hot Drinks', id: 1, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Hot Drinks 1', id: 1, price: 11.1, available: true },
+      { name: 'Hot Drinks 2', id: 2, price: 22.2, available: true },
+      { name: 'Hot Drinks 3', id: 3, price: 33.3,  available: true }]
+  },{ name: 'Iced Drinks', id: 2, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Iced Drinks 1', id: 1, price: 11.1, available: true },
+      { name: 'Iced Drinks 2', id: 2, price: 22.2, available: true },
+      { name: 'Iced Drinks 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Water', id: 3, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Water 1', id: 1, price: 11.1, available: true },
+      { name: 'Water 2', id: 2, price: 22.2, available: true },
+      { name: 'Water 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Draught Beer', id: 4, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Draught Beer 1', id: 1, price: 11.1, available: true },
+      { name: 'Draught Beer 2', id: 2, price: 22.2, available: true },
+      { name: 'Draught Beer 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Bottled Beer', id: 5, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Bottled Beer 1', id: 1, price: 11.1, available: true },
+      { name: 'Bottled Beer 2', id: 2, price: 22.2, available: true },
+      { name: 'Bottled Beer 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Wine', id: 6, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Wine 1', id: 1, price: 11.1, available: true },
+      { name: 'Wine 2', id: 2, price: 22.2, available: true },
+      { name: 'Wine 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Brandy', id: 7, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Brandy 1', id: 1, price: 11.1, available: true },
+      { name: 'Brandy 2', id: 2, price: 22.2, available: true },
+      { name: 'Brandy 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Liqueur', id: 8, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+      { name: 'Liqueur 1', id: 1, price: 11.1, available: true },
+      { name: 'Liqueur 2', id: 2, price: 22.2, available: true },
+      { name: 'Liqueur 3', id: 3, price: 33.3, available: true }]
   }];
 
   // For use during development
@@ -95,10 +95,6 @@ angular.module('mos')
     return categories;
   }
 
-})
-
-.controller('home-ctrl', function($scope){
-  $scope.setCurrentPath("Home");
 })
 
 .controller('complaints-ctrl', function($scope, $http){

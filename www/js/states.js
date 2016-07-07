@@ -6,7 +6,7 @@ angular.module('mos')
 
     state('/home', {
       url: '/home',
-      templateUrl: 'webPages/homeMenu.html'
+      templateUrl: 'views/home/home.html'
     })
 
     .state('/categories', {
