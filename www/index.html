@@ -5,8 +5,13 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title> MOS </title>
 
+
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/6f7a7d5c52.js"></script>
+
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -15,14 +20,15 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- angular -->
+    <!-- AngularJS -->
     <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+    <!-- <script src="js/angular-animate.js"></script> -->
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- Underscore.js -->
-    <script src="lib/js/underscore.js"></script>
+    <script src="js/underscore.js"></script>
 
     <!-- app's js -->
     <script src="js/app.js"></script>
@@ -59,30 +65,10 @@
         margin: 0 auto;
       }
 
-      .category-item img {
-        margin-top: 5px;
-        margin-left: 5px;
-      }
-
       .category-item a {
         display: block;
         text-align: center;
         padding-left: 100px;
-      }
-
-      .home-list ion-item {
-        padding: 5px;
-      }
-
-      .item-list ion-item {
-        padding: 5px;
-      }
-
-      .category-list a {
-        display: block;
-        padding: 10px;
-        width: 100%;
-        text-decoration: none;
       }
 
       .home-list a {
@@ -90,13 +76,7 @@
         padding: 7px;
         text-decoration: none;
       }
-
-      .item-list a {
-        display: block;
-        padding: 7px;
-        text-decoration: none;
-      }
-
+      
       .float-right {
         float: right;
       }
@@ -112,7 +92,8 @@
     <ion-pane>
 
       <ion-header-bar class="bar-stable">
-        <h1 class="title"> {{title}} - {{titleShort}} </h1>
+        <button class="float-left button-back" ng-click="goBack()" ng-hide="isHome"> Back </button>
+        <h2 class="title"> {{ currentPath }} </h2>
       </ion-header-bar>
 
       <ion-content>

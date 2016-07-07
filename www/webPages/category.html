@@ -1,23 +1,10 @@
 <div ng-controller="category-ctrl">
-  <p> This is category.html </p>
-  <p> categoryId: {{categoryId}} </p>
   <ion-list class="item-list">
-    <ion-item>
-      <h3> Category </h3>
-    </ion-item>
-    <ion-item>
-      <p class="float-left"> Name: </p>
-      <p class="float-right"> {{categoryName}} </p>
-    </ion-item>
-    <ion-item>
-      <p class="float-left"> Id: </p>
-      <p class="float-right"> {{categoryId}} </p>
-    </ion-item>
-    <ion-item>
-      <h3> Items </h3>
-    </ion-item>
-    <ion-item ng-repeat="item in items" style="clear: both">
-      <a href="#/categories/category={{categoryId}}/item={{item.id}}"> {{item.name}} </a>
+    <ion-item class="list-item" ng-repeat="item in items" style="clear: both">
+      <a href="#/categories/category={{categoryId}}/item={{item.id}}" class="item-link">
+        <p class="float-left"> {{item.name}} </p>
+        <p class="float-right"> {{item.price}} $</p>
+      </a>
     </ion-item>
   </ion-list>
 </div>

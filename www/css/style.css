@@ -1,1 +1,86 @@
-/* Empty. Add your own CSS if you like */
+body,ion-pane,ion-header-bar,ion-content {
+  min-width: 200px;
+}
+
+.list {
+  width: 100%;
+}
+
+.list-item {
+  display: block;
+  width: 100%;
+  min-width: 170px;
+  text-align: center;
+  padding: 10px !important;
+}
+
+.list-item-half {
+  display: inline-table;
+  width: 50%;
+  min-width: 175px;
+  text-align: center;
+  padding: 10px !important;
+}
+
+.list-item-link {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.category {
+  padding: 0px;
+  text-decoration: none;
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.category-name {
+  padding: 15px;
+  color: #0066ff !important;
+}
+
+.item-link {
+  padding-top: 15px;
+  padding-bottom: 25px;
+  margin-top: -5px;
+  height: 30px;
+  display: block;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.title {
+  text-align: center !important;
+  left: 0px !important;
+  right: 0px !important;
+}
+
+.button-back {
+  background-color: white;
+  border: 1px solid;
+  border-color: #666;
+  text-decoration: none;
+  color: #666;
+  font-size: 18px !important;
+  border-radius: 5px;
+  line-height: 0px !important;
+}
+
+@media screen and (max-width: 350px) {
+    .list-item-half {
+        min-width: 100%;
+    }
+}
