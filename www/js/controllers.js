@@ -114,9 +114,11 @@ angular.module('mos')
 
   $scope.getComplaints = function(){
     $http.get('php/getComplaints.php').then(function(response){
-      $scope.complaints = response.data.d;
+      //$scope.complaints = response.data.d;
     });
   }
+
+  $scope.getComplaints();
 })
 
 .controller('complaint-ctrl', function($scope, $stateParams, $http){
@@ -127,39 +129,29 @@ angular.module('mos')
 
   $scope.getComplaint = function(complaintId){
     $http.get('php/getComplaint.php', { params: { complaintId: complaintId } }).then(function(response){
-      $scope.complaint = response.data.d;
+      //$scope.complaint = response.data.d;
     });
   }
+  $scope.getComplaint($scope.complaintId);
 })
 
 .controller('categories-ctrl', function($scope, $http){
   $scope.setCurrentPath("Categories");
 
-  $scope.categories = [
-    { name: 'Coffeine', id: 1 },
-    { name: 'Beer', id: 2 },
-    { name: 'Water', id: 3 },
-    { name: 'Tea', id: 4 },
-    { name: 'Wine', id: 5 },
-    { name: 'Liqeour', id: 6 },
-    { name: 'Juice', id: 7 },
-    { name: 'Ice Cream', id: 8 }
-  ];
-
   $scope.categories = $scope.getCategoryList();
 
-  /*
+
   // Have to use full path during development
   $scope.getCategories = function(){
     $http.get('php/getCategories.php').then(function(response){
       // Get categories from getCategories.php
-      $scope.categories = response.data.d;
+      // $scope.categories = response.data.d;
     });
   }
-  */
+  $scope.getCategories();
 })
 
-.controller('category-ctrl', function($scope, $stateParams){
+.controller('category-ctrl', function($scope, $stateParams, $http){
   console.log("category-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
@@ -178,9 +170,11 @@ angular.module('mos')
       // Get items from category with categoryId
     });
   }
+  $scope.getItems($scope.categoryId);
+
 })
 
-.controller('item-ctrl', function($scope, $stateParams){
+.controller('item-ctrl', function($scope, $stateParams, $http){
   console.log("item-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
@@ -194,7 +188,7 @@ angular.module('mos')
   $scope.category;
   $scope.item;
 
-  $scope.setCurrentPath($scope.categoryName + " -> " + $scope.item.name);
+  $scope.setCurrentPath($scope.item.name);
 
   // Have to use full path during deployment
   $scope.getCategory = function(categoryId){
@@ -203,6 +197,7 @@ angular.module('mos')
       $scope.category = response.data.d;
     });
   }
+  $scope.getCategory($scope.categoryId);
 
   // Have to use full path during development
   $scope.getItemData = function(categoryId, itemId){
@@ -211,4 +206,5 @@ angular.module('mos')
       $scope.item = response.data.d;
     });
   }
+  $scope.getItemData($scope.categoryId, $scope.itemId);
 });
