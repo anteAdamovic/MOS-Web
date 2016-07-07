@@ -97,10 +97,6 @@ angular.module('mos')
 
 })
 
-.controller('home-ctrl', function($scope){
-  $scope.setCurrentPath("Home");
-})
-
 .controller('complaints-ctrl', function($scope, $http){
   $scope.setCurrentPath("Complaints");
 
