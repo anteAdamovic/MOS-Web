@@ -19,91 +19,80 @@ angular.module('mos')
     history.back();
   }
 
-  $scope.data = [{
-    name: 'Category 1',
-    id: 1,
-    image: 'image.img',
-    items: [{
-      name: 'Item 1',
-      id: 1,
-      price: 12.5,
-      available: true
-    },{
-      name: 'Item 2',
-      id: 2,
-      price: 14.5,
-      available: true
-    },{
-      name: 'Item 3',
-      id: 3,
-      price: 9.5,
-      available: true
-    }]
-  },{
-    name: 'Category 2',
-    id: 2,
-    image: 'image.img',
-    items: [{
-      name: 'Item 21',
-      id: 1,
-      price: 212.5,
-      available: true
-    },{
-      name: 'Item 22',
-      id: 2,
-      price: 214.5,
-      available: true
-    },{
-      name: 'Item 23',
-      id: 3,
-      price: 29.5,
-      available: true
-    }]
-  },{
-    name: 'Category 3',
-    id: 3,
-    image: 'image.img',
-    items: [{
-      name: 'Item 31',
-      id: 1,
-      price: 312.5,
-      available: true
-    },{
-      name: 'Item 32',
-      id: 2,
-      price: 314.5,
-      available: true
-    },{
-      name: 'Item 33',
-      id: 3,
-      price: 39.5,
-      available: true
-    }]
-  },{
-    name: 'Category 4',
-    id: 4
-  },{
-    name: 'Category 5',
-    id: 5
-  },{
-    name: 'Category 6',
-    id: 6
-  },{
-    name: 'Category 7',
-    id: 7
-  },{
-    name: 'Category 8',
-    id: 8
+  $scope.data = [
+    { name: 'Hot Drinks', id: 1, image: 'image.img', items: [
+                                                        { name: 'Hot Drinks 1', id: 1, price: 11.1, available: true },
+                                                        { name: 'Hot Drinks 2', id: 2, price: 22.2, available: true },
+                                                        { name: 'Hot Drinks 3', id: 3, price: 33.3,  available: true }]
+  },{ name: 'Iced Drinks', id: 2, image: 'image.img', items: [
+                                                        { name: 'Iced Drinks 1', id: 1, price: 11.1, available: true },
+                                                        { name: 'Iced Drinks 2', id: 2, price: 22.2, available: true },
+                                                        { name: 'Iced Drinks 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Water', id: 3, image: 'image.img', items: [
+                                                  { name: 'Water 1', id: 1, price: 11.1, available: true },
+                                                  { name: 'Water 2', id: 2, price: 22.2, available: true },
+                                                  { name: 'Water 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Draught Beer', id: 4, image: 'image.img', items: [
+                                                 { name: 'Draught Beer 1', id: 1, price: 11.1, available: true },
+                                                 { name: 'Draught Beer 2', id: 2, price: 22.2, available: true },
+                                                 { name: 'Draught Beer 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Bottled Beer', id: 5, image: 'image.img', items: [
+                                                 { name: 'Bottled Beer 1', id: 1, price: 11.1, available: true },
+                                                 { name: 'Bottled Beer 2', id: 2, price: 22.2, available: true },
+                                                 { name: 'Bottled Beer 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Wine', id: 6, image: 'image.img', items: [
+                                                 { name: 'Wine 1', id: 1, price: 11.1, available: true },
+                                                 { name: 'Wine 2', id: 2, price: 22.2, available: true },
+                                                 { name: 'Wine 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Brandy', id: 7, image: 'image.img', items: [
+                                                   { name: 'Brandy 1', id: 1, price: 11.1, available: true },
+                                                   { name: 'Brandy 2', id: 2, price: 22.2, available: true },
+                                                   { name: 'Brandy 3', id: 3, price: 33.3, available: true }]
+  },{ name: 'Liqueur', id: 8, image: 'image.img', items: [
+                                                    { name: 'Liqueur 1', id: 1, price: 11.1, available: true },
+                                                    { name: 'Liqueur 2', id: 2, price: 22.2, available: true },
+                                                    { name: 'Liqueur 3', id: 3, price: 33.3, available: true }]
   }];
 
   // For use during development
-  $scope.getCategoryItems = function(categoryId){
+  $scope.getItem = function(categoryId, itemId){
+    var item = {};
+    _.each($scope.data, function(d){
+      if(d.id == parseInt(categoryId))
+        _.each(d.items, function(i){
+          if(i.id == parseInt(itemId))
+            item = i;
+        });
+    });
 
+    return item;
+  }
+
+  // For use during development
+  $scope.getCategory = function(categoryId){
+    var category = {};
+
+    _.each($scope.data, function(d){
+      if(d.id == parseInt(categoryId))
+        category = d;
+    });
+
+    return category;
   }
 
   // For use during development
   $scope.getCategoryList = function(){
+    var categories = [];
 
+    _.each($scope.data, function(d){
+      categories.push({
+        name: d.name,
+        id: d.id,
+        image: d.image
+      });
+    });
+
+    return categories;
   }
 
 })
@@ -157,6 +146,9 @@ angular.module('mos')
     { name: 'Ice Cream', id: 8 }
   ];
 
+  $scope.categories = $scope.getCategoryList();
+
+  /*
   // Have to use full path during development
   $scope.getCategories = function(){
     $http.get('php/getCategories.php').then(function(response){
@@ -164,12 +156,17 @@ angular.module('mos')
       $scope.categories = response.data.d;
     });
   }
+  */
 })
 
 .controller('category-ctrl', function($scope, $stateParams){
   console.log("category-ctrl params: ");
   console.log($stateParams);
   $scope.categoryId = $stateParams.categoryId;
+  $scope.category = $scope.getCategory($scope.categoryId);
+  console.log("Category:");
+  console.log($scope.category);
+
   $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.items = $scope.data[$scope.categoryId-1].items;
 
@@ -190,6 +187,9 @@ angular.module('mos')
   $scope.categoryName = $scope.data[$scope.categoryId-1].name;
   $scope.itemId = $stateParams.itemId;
   $scope.item = $scope.data[$scope.categoryId].items[$scope.itemId];
+  $scope.item = $scope.getItem($scope.categoryId, $scope.itemId);
+  console.log("Item:");
+  console.log($scope.item);
 
   $scope.category;
   $scope.item;
