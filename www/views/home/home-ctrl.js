@@ -4,10 +4,11 @@ angular.module('mos')
   return {
     resctrict: 'E',
     scope: false,
-    template: '<ion-item class="home-list-item"><a class="home-list-link" href="{{url}}"> {{name}} </a></ion-item>',
-    link: function(scope, element, attr){
-      scope.url = attr.url;
-      scope.name = attr.name;
+    template: '<ion-item class="home-list-item"><a class="home-list-item-link" href="{{url}}"><br><i class="{{icon}} home-list-item-icon"></i> {{name}} </a></ion-item>',
+    link: function(scope, element, attrs){
+      scope.url = attrs.url;
+      scope.name = attrs.name;
+      scope.icon = attrs.icon;
     }
   }
 })
@@ -17,16 +18,19 @@ angular.module('mos')
 
   $scope.homeItems = [{
     name: 'Browse',
-    //url: '#/browseCategories'  <-- Needs to be active later on
-    url: '#/categories'
+    url: '#/browseCategories',
+    icon: 'fa fa-hand-o-right fa-1'
   },{
-    name: 'Complains',
-    url: '#/complaints'
+    name: 'Complaints',
+    url: '#/complaints',
+    icon: 'fa fa-book fa-1'
   },{
     name: 'Settings',
-    url: '#/settings'
+    url: '#/settings',
+    icon: 'fa fa-cog fa-1'
   },{
     name: 'About',
-    url: '#/about'
+    url: '#/about',
+    icon: 'fa fa-info fa-1'
   }]
 });
