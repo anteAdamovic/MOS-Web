@@ -7,6 +7,24 @@ angular.module('mos')
   $scope.currentPath = "Mobile Order System";
   $scope.isHome = true;
 
+  $scope.orderChart = [];
+
+  $scope.addOrderItem = function(item){
+    $scope.orderChart.push(item);
+  }
+
+  $scope.removeOrderItem = function(item){
+
+  }
+
+  $scope.clearOrderChart = function(){
+    $scope.orderChart = [];
+  }
+
+  $scope.getOrderChart = function(){
+    return $scope.orderChart;
+  }
+
   $scope.setCurrentPath = function(newPath){
     $scope.currentPath = newPath;
     if(newPath == 'Home')
