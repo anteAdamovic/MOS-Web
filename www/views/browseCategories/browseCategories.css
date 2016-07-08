@@ -17,7 +17,8 @@
   word-wrap: break-word !important;
   white-space: normal !important;
   margin-top: 5px;
-  height: 30px;
+  height: 40px;
+  max-width: 90px;
 }
 .category-list-item-icon {
   display: block;
@@ -36,6 +37,9 @@
     display: block;
     text-align: center;
     width: 100%;
+  }
+  .category-list-item-name {
+    max-width: 150px;
   }
 }
 
