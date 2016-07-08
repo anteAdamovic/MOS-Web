@@ -7,6 +7,24 @@ angular.module('mos')
   $scope.currentPath = "Mobile Order System";
   $scope.isHome = true;
 
+  $scope.orderChart = [];
+
+  $scope.addOrderItem = function(item){
+    $scope.orderChart.push(item);
+  }
+
+  $scope.removeOrderItem = function(item){
+
+  }
+
+  $scope.clearOrderChart = function(){
+    $scope.orderChart = [];
+  }
+
+  $scope.getOrderChart = function(){
+    return $scope.orderChart;
+  }
+
   $scope.setCurrentPath = function(newPath){
     $scope.currentPath = newPath;
     if(newPath == 'Home')
@@ -20,35 +38,35 @@ angular.module('mos')
   }
 
   $scope.data = [
-    { name: 'Hot Drinks', id: 1, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+    { name: 'Hot Drinks', id: 1, icon: 'fa fa-coffee fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Hot Drinks 1', id: 1, price: 11.1, available: true },
       { name: 'Hot Drinks 2', id: 2, price: 22.2, available: true },
       { name: 'Hot Drinks 3', id: 3, price: 33.3,  available: true }]
-  },{ name: 'Iced Drinks', id: 2, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Iced Drinks', id: 2, icon: 'fa fa-coffee fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Iced Drinks 1', id: 1, price: 11.1, available: true },
       { name: 'Iced Drinks 2', id: 2, price: 22.2, available: true },
       { name: 'Iced Drinks 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Water', id: 3, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Water', id: 3, icon: 'fa fa-glass fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Water 1', id: 1, price: 11.1, available: true },
       { name: 'Water 2', id: 2, price: 22.2, available: true },
       { name: 'Water 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Draught Beer', id: 4, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Draught Beer', id: 4, icon: 'fa fa-beer fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Draught Beer 1', id: 1, price: 11.1, available: true },
       { name: 'Draught Beer 2', id: 2, price: 22.2, available: true },
       { name: 'Draught Beer 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Bottled Beer', id: 5, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Bottled Beer', id: 5, icon: 'fa fa-beer fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Bottled Beer 1', id: 1, price: 11.1, available: true },
       { name: 'Bottled Beer 2', id: 2, price: 22.2, available: true },
       { name: 'Bottled Beer 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Wine', id: 6, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Wine', id: 6, icon: 'fa fa-glass fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Wine 1', id: 1, price: 11.1, available: true },
       { name: 'Wine 2', id: 2, price: 22.2, available: true },
       { name: 'Wine 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Brandy', id: 7, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Brandy', id: 7, icon: 'fa fa-glass fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Brandy 1', id: 1, price: 11.1, available: true },
       { name: 'Brandy 2', id: 2, price: 22.2, available: true },
       { name: 'Brandy 3', id: 3, price: 33.3, available: true }]
-  },{ name: 'Liqueur', id: 8, image: 'image.img', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
+  },{ name: 'Liqueur', id: 8, icon: 'fa fa-glass fa-2', quote: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit."', items: [
       { name: 'Liqueur 1', id: 1, price: 11.1, available: true },
       { name: 'Liqueur 2', id: 2, price: 22.2, available: true },
       { name: 'Liqueur 3', id: 3, price: 33.3, available: true }]
@@ -88,7 +106,7 @@ angular.module('mos')
       categories.push({
         name: d.name,
         id: d.id,
-        image: d.image
+        icon: d.icon
       });
     });
 
@@ -129,22 +147,6 @@ angular.module('mos')
     });
   }
   $scope.getComplaint($scope.complaintId);
-})
-
-.controller('categories-ctrl', function($scope, $http){
-  $scope.setCurrentPath("Categories");
-
-  $scope.categories = $scope.getCategoryList();
-
-
-  // Have to use full path during development
-  $scope.getCategories = function(){
-    $http.get('php/getCategories.php').then(function(response){
-      // Get categories from getCategories.php
-      // $scope.categories = response.data.d;
-    });
-  }
-  $scope.getCategories();
 })
 
 .controller('category-ctrl', function($scope, $stateParams, $http){

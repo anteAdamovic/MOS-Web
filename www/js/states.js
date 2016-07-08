@@ -9,9 +9,9 @@ angular.module('mos')
       templateUrl: 'views/home/home.html'
     })
 
-    .state('/categories', {
-      url: '/categories',
-      templateUrl: 'webPages/categories.html'
+    .state('/browseCategories', {
+      url: '/browseCategories',
+      templateUrl: 'views/browseCategories/browseCategories.html'
     })
 
     .state('/complaints',{

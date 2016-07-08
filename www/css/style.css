@@ -51,6 +51,7 @@ body,ion-pane,ion-header-bar,ion-content {
   word-wrap: break-word;
   white-space: normal;
   font-size: 14px;
+  font-style: italic;
 }
 
 .item-link {
@@ -90,4 +91,33 @@ body,ion-pane,ion-header-bar,ion-content {
     .list-item-half {
         min-width: 100%;
     }
+}
+
+/* Index.html css */
+.footer-overlay {
+  width: 100%;
+  margin: 0px;
+  padding-right: 2px;
+  height: 550px;
+}
+
+.order-chart-minimized {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-left: 1px;
+  height: 50px;
+  opacity: 0.6;
+  background: #387ef5;
+}
+
+.order-chart {
+  display: block;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  margin-left: 1px;
+  height: 550px;
+  opacity: 0.6;
+  background: #387ef5;
 }
