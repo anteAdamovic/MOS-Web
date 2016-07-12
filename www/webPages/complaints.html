@@ -1,5 +1,8 @@
 <div ng-controller="complaints-ctrl">
   <ion-list class="list">
+    <ion-item>
+      <button class="new-complaint-button" ng-click="createComplaint()"> Create complaint </button>
+    </ion-item>
     <ion-item class="list-item" ng-repeat="complaint in complaints">
       <a class="list-item-link" href="#complaints/complaint={{complaint.id}}"> {{complaint.name}} </a>
     </ion-item>

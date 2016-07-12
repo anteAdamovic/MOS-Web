@@ -4,7 +4,7 @@ angular.module('mos')
   return {
     restrict: 'E',
     scope: false,
-    template: '    <ion-item class="category-list-item-half"><a class="category-list-item-link" href="#/categories/category={{category.id}}"><i class="float-left category-list-item-icon {{category.icon}}"></i><p class="float-right category-list-item-name">{{category.name}}</p></a></ion-item>',
+    template: '    <ion-item class="category-list-item"><a class="category-list-item-link" href="#/categories/category={{category.id}}"><i class="float-left category-list-item-icon {{category.icon}}"></i><p class="float-right category-list-item-name">{{category.name}}</p></a></ion-item>',
     link: function(scope, element, attrs){
       scope.category = angular.fromJson(attrs.category);
       console.log(angular.fromJson(scope.category));

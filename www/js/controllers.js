@@ -133,6 +133,10 @@ angular.module('mos')
   }
 
   $scope.getComplaints();
+
+  $scope.createComplaint = function() {
+    confirm("Are you sure you want to create a complaint ?");
+  }
 })
 
 .controller('complaint-ctrl', function($scope, $stateParams, $http){
