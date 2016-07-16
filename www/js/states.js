@@ -4,8 +4,8 @@ angular.module('mos')
 
   $stateProvider.
 
-    state('/home', {
-      url: '/home',
+    state('/home?cid=cId&tid=tId', {
+      url: '/home?cid=:cId&tid=:tId',
       templateUrl: 'views/home/home.html'
     })
 

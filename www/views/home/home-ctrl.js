@@ -13,8 +13,25 @@ angular.module('mos')
   }
 })
 
-.controller('home-ctrl', function($scope){
+.controller('home-ctrl', function($scope, $stateParams){
   $scope.setCurrentPath("Home");
+
+  if(!$stateParams.cId)
+    console.log('No client id!');
+  else {
+    console.log('Client id: ' + $stateParams.cId);
+  }
+
+  if(!$stateParams.tId)
+    console.log('No table id!');
+  else {
+    console.log('Table id: ' + $stateParams.tId);
+  }
+
+  $scope.cId = $stateParams.cId;
+  $scope.tId = $stateParams.tId;
+
+
 
   $scope.homeItems = [{
     name: 'Browse',

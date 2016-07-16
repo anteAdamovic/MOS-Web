@@ -7,6 +7,9 @@ angular.module('mos')
   $scope.currentPath = "Mobile Order System";
   $scope.isHome = true;
 
+  $scope.cId = null;
+  $scope.tId = null;
+
   $scope.orderChart = [];
 
   $scope.addOrderItem = function(item){
