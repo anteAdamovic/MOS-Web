@@ -1,10 +1,54 @@
 .home-list {
   width: 100%;
-  text-align: center;
 }
 .home-list-item {
-
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
-.home-list-link {
+.home-list-item-link {
   text-decoration: none;
+  font-size: 18px;
+  line-height: 18px;
+  color: #387ef5;
+
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.home-list-item-icon {
+  margin-right: 5px;
+  color: #387ef5;
+}
+
+/* Font Awesome */
+@font-face {
+  font-family:'FontAwesome';
+  src:
+    url('../../css/fontAwesome/fonts/fontawesome-webfont.woff2?v=4.6.3')
+    format('woff2');
+  font-weight:normal;
+  font-style:normal;
+  }
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-hand-o-right:before {
+  content: "\f0a4";
+}
+.fa-book:before {
+  content: "\f02d";
+}
+.fa-cog:before {
+  content: "\f013";
+}
+.fa-info:before {
+  content: "\f129";
 }

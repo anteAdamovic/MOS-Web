@@ -2,15 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">-->
     <title> MOS </title>
 
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <!--<link href="css/fontawesome/css/fa-font-awesome.min.css" rel="stylesheet">-->
 
     <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/6f7a7d5c52.js"></script>
+    <!--<script src="https://use.fontawesome.com/6f7a7d5c52.js"></script>-->
 
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -33,17 +35,37 @@
     <!-- app's js -->
     <script src="js/app.js"></script>
     <script src="views/home/home-ctrl.js"></script>
+    <script src="views/browseCategories/browseCategories-ctrl.js"></script>
 
     <script src="js/controllers.js"></script>
     <script src="js/states.js"></script>
 
+    <style>
+      .header-bar {
+        background-color: #387ef5 !important;
+      }
+      .title {
+        color: white !important;
+      }
+      .button-back {
+        color: #386ef5;
+        border-color: white !important;
+      }
+      .new-complaint-button {
+        width: 100%;
+        height: 45px;
+        border-radius: 4px;
+        background-color: #386ef5;
+        border: 1px solid;
+      }
+    </style>
 
   </head>
   <body ng-app="mos" ng-controller="mos-ctrl">
 
     <ion-pane>
 
-      <ion-header-bar class="bar-stable">
+      <ion-header-bar class="bar-stable header-bar">
         <button class="float-left button-back" ng-click="goBack()" ng-hide="isHome"> Back </button>
         <h2 class="title"> {{ currentPath }} </h2>
       </ion-header-bar>
@@ -51,6 +73,15 @@
       <ion-content>
         <div ui-view></div>
       </ion-content>
+
+      <ion-footer-bar style="padding: 0; margin-bottom: -13px;">
+        <div class="footer-overlay">
+          <span class="order-chart-minimized">
+          </span>
+          <span class="order-chart">
+          </span>
+        </div>
+      </ion-footer-bar>
 
     </ion-pane>
 

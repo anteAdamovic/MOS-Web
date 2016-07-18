@@ -1,0 +1,8 @@
+<!-- Load css -->
+<link href="views/browseCategories/browseCategories.css" rel="stylesheet">
+
+<div ng-controller="categories-ctrl">
+  <ion-list class="category-list">
+    <browse-categories-item ng-repeat="category in categories" category={{category}}></browse-categories-item>
+  </ion-list>
+</div>

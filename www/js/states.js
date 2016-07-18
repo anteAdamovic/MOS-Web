@@ -4,14 +4,14 @@ angular.module('mos')
 
   $stateProvider.
 
-    state('/home', {
-      url: '/home',
+    state('/home?cid=cId&tid=tId', {
+      url: '/home?cid=:cId&tid=:tId',
       templateUrl: 'views/home/home.html'
     })
 
-    .state('/categories', {
-      url: '/categories',
-      templateUrl: 'webPages/categories.html'
+    .state('/browseCategories', {
+      url: '/browseCategories',
+      templateUrl: 'views/browseCategories/browseCategories.html'
     })
 
     .state('/complaints',{
