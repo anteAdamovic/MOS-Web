@@ -19,6 +19,8 @@ between users mobile device and the web service.
 
 ---
 
+# This project is outdated, check https://github.com/anteAdamovic/MOS-2.0 for new version written in Angular 2 and Ionic 2
+
 <b>Set up working enviroment:</b>
 
 <b> Linux: </b>
